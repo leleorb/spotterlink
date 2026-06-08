@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-07T00:00:00.000Z",
+  "title": "Design System: Spotter",
+  "extensions": {
+    "colorMeta": {
+      "bg-abyss":       { "role": "neutral",   "displayName": "Azul Meia-Noite da Piscina", "canonical": "#071428", "tonalRamp": ["#010305","#020a15","#030f1e","#071428","#0c1f3f","#122a54","#1a3a6e","#264f8e"] },
+      "surface":        { "role": "neutral",   "displayName": "Azul Vestiário",             "canonical": "#0c1f3f", "tonalRamp": ["#010509","#030e22","#071428","#0c1f3f","#122a54","#1a3a6e","#264f8e","#3a6bb5"] },
+      "surface-raised": { "role": "neutral",   "displayName": "Azul Armário",               "canonical": "#122a54", "tonalRamp": ["#020810","#061422","#0c1f3f","#122a54","#1a3a6e","#264f8e","#3a6bb5","#5a8fd0"] },
+      "action":         { "role": "primary",   "displayName": "Azul Pista de Atletismo",    "canonical": "#2563eb", "tonalRamp": ["#0a1c5c","#1034a6","#1d4ed8","#2563eb","#3b82f6","#60a5fa","#93c5fd","#bfdbfe"] },
+      "accent-mid":     { "role": "primary",   "displayName": "Azul Elétrico",              "canonical": "#3b82f6", "tonalRamp": ["#0a1c5c","#1034a6","#1d4ed8","#2563eb","#3b82f6","#60a5fa","#93c5fd","#bfdbfe"] },
+      "accent-light":   { "role": "primary",   "displayName": "Azul Névoa",                 "canonical": "#60a5fa", "tonalRamp": ["#0a1c5c","#1034a6","#2563eb","#3b82f6","#60a5fa","#93c5fd","#bfdbfe","#dbeafe"] },
+      "accent-faint":   { "role": "primary",   "displayName": "Azul Gelo",                  "canonical": "#93c5fd", "tonalRamp": ["#1034a6","#2563eb","#3b82f6","#60a5fa","#93c5fd","#bfdbfe","#dbeafe","#eff6ff"] },
+      "status-go":      { "role": "tertiary",  "displayName": "Verde Largada",              "canonical": "#4ade80", "tonalRamp": ["#052e16","#14532d","#166534","#15803d","#22c55e","#4ade80","#86efac","#bbf7d0"] },
+      "status-hold":    { "role": "tertiary",  "displayName": "Âmbar Sinal",               "canonical": "#fbbf24", "tonalRamp": ["#451a03","#78350f","#92400e","#b45309","#d97706","#fbbf24","#fcd34d","#fde68a"] },
+      "status-stop":    { "role": "tertiary",  "displayName": "Vermelho Limite",            "canonical": "#f87171", "tonalRamp": ["#450a0a","#7f1d1d","#991b1b","#b91c1c","#ef4444","#f87171","#fca5a5","#fecaca"] },
+      "status-streak":  { "role": "tertiary",  "displayName": "Laranja Sequência",          "canonical": "#fb923c", "tonalRamp": ["#431407","#7c2d12","#9a3412","#c2410c","#ea580c","#fb923c","#fdba74","#fed7aa"] },
+      "ink-primary":    { "role": "neutral",   "displayName": "Branco",                     "canonical": "#ffffff", "tonalRamp": ["#071428","#0c1f3f","#122a54","#1a3a6e","#6b8cba","#b8cde8","#dce8f4","#ffffff"] },
+      "ink-secondary":  { "role": "neutral",   "displayName": "Branco Névoa",               "canonical": "#ffffffb3","tonalRamp": ["#071428","#0c1f3f","#264f8e","#4a7bbf","#7ba8d8","#b0cde9","#d5e7f4","#ffffff"] },
+      "ink-muted":      { "role": "neutral",   "displayName": "Branco Mudo",                "canonical": "#ffffff66", "tonalRamp": ["#071428","#0c1f3f","#1a3a6e","#2d5a9a","#5583bc","#8eadd4","#c2d8ee","#ffffff"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display",  "purpose": "Nome do app, números grandes de ranking. Um por tela." },
+      "headline": { "displayName": "Headline","purpose": "Título de seção, nome do treino em destaque." },
+      "title":    { "displayName": "Title",   "purpose": "Nome do treino em card, rótulo de botão." },
+      "body":     { "displayName": "Body",    "purpose": "Descrição de treino, comentário de feed. Máx 65ch." },
+      "label":    { "displayName": "Label",   "purpose": "Chips de dificuldade, filter pills, tags." },
+      "caption":  { "displayName": "Caption", "purpose": "Nav label mobile, metadata. Nunca instrução." }
+    },
+    "shadows": [
+      { "name": "floating",   "value": "0 8px 32px rgba(0,0,0,0.4)", "purpose": "Exclusivo para toast e overlays sobre fundo escuro." }
+    ],
+    "motion": [
+      { "name": "fade-up",    "value": "opacity 0 → 1, translateY 10px → 0, 200ms ease-out", "purpose": "Entrada de conteúdo de aba ao trocar tab." },
+      { "name": "slide-up",   "value": "opacity 0 → 1, translateY 20px → 0, 220ms ease-out", "purpose": "Bottom sheet e toast." },
+      { "name": "like-pop",   "value": "scale 1 → 1.5 → 1, 250ms ease", "purpose": "Feedback de curtida no feed." },
+      { "name": "progress",   "value": "width transition 600ms ease", "purpose": "Barra de progresso do ranking." }
+    ],
+    "breakpoints": [
+      { "name": "mobile-max", "value": "480px", "note": "App shell máx width em mobile" },
+      { "name": "tablet",     "value": "600px", "note": "Grid de exercícios passa de 2 para 3 colunas" },
+      { "name": "desktop",    "value": "768px", "note": "Bottom nav vira sidebar; layout muda para row" }
+    ],
+    "zIndex": [
+      { "name": "topbar",      "value": 30, "purpose": "Header sticky" },
+      { "name": "bottom-nav",  "value": 40, "purpose": "Navegação fixa inferior" },
+      { "name": "sheet-overlay","value": 50, "purpose": "Overlay do bottom sheet" },
+      { "name": "toast",        "value": 60, "purpose": "Notificações efêmeras" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botão Primário",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ação principal de cada tela. Full-width em mobile.",
+      "html": "<button class=\"ds-btn-primary\">Publicar treino</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #2563eb; color: #ffffff; font-family: Inter, -apple-system, sans-serif; font-weight: 700; font-size: 15px; line-height: 1.3; padding: 14px 24px; border-radius: 14px; border: none; cursor: pointer; width: 100%; transition: background 0.15s, transform 0.1s; } .ds-btn-primary:hover { background: #3b82f6; } .ds-btn-primary:active { background: #1d4ed8; transform: scale(0.97); } .ds-btn-primary:focus-visible { outline: 2px solid #60a5fa; outline-offset: 3px; } .ds-btn-primary:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }"
+    },
+    {
+      "name": "Botão Secundário",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Ações de suporte ou reversíveis. Full-width em mobile.",
+      "html": "<button class=\"ds-btn-secondary\">Salvar rascunho</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.8); font-family: Inter, -apple-system, sans-serif; font-weight: 600; font-size: 15px; line-height: 1.3; padding: 14px 24px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.1); cursor: pointer; width: 100%; transition: background 0.15s; } .ds-btn-secondary:hover { background: rgba(255,255,255,0.11); } .ds-btn-secondary:active { background: rgba(255,255,255,0.14); } .ds-btn-secondary:focus-visible { outline: 2px solid #3b82f6; outline-offset: 3px; }"
+    },
+    {
+      "name": "Chip de Dificuldade — Iniciante",
+      "kind": "chip",
+      "refersTo": "chip-go",
+      "description": "Badge de nível Iniciante. Sempre com texto, nunca só cor.",
+      "html": "<span class=\"ds-chip-go\">Iniciante</span>",
+      "css": ".ds-chip-go { display: inline-flex; align-items: center; padding: 5px 12px; border-radius: 99px; font-family: Inter, -apple-system, sans-serif; font-size: 12px; font-weight: 600; line-height: 1.2; letter-spacing: 0.01em; background: rgba(34,197,94,0.1); border: 1.5px solid rgba(34,197,94,0.25); color: #4ade80; white-space: nowrap; }"
+    },
+    {
+      "name": "Chip de Dificuldade — Intermediário",
+      "kind": "chip",
+      "refersTo": "chip-hold",
+      "description": "Badge de nível Intermediário.",
+      "html": "<span class=\"ds-chip-hold\">Intermediário</span>",
+      "css": ".ds-chip-hold { display: inline-flex; align-items: center; padding: 5px 12px; border-radius: 99px; font-family: Inter, -apple-system, sans-serif; font-size: 12px; font-weight: 600; line-height: 1.2; letter-spacing: 0.01em; background: rgba(251,191,36,0.1); border: 1.5px solid rgba(251,191,36,0.25); color: #fbbf24; white-space: nowrap; }"
+    },
+    {
+      "name": "Chip de Dificuldade — Avançado",
+      "kind": "chip",
+      "refersTo": "chip-stop",
+      "description": "Badge de nível Avançado.",
+      "html": "<span class=\"ds-chip-stop\">Avançado</span>",
+      "css": ".ds-chip-stop { display: inline-flex; align-items: center; padding: 5px 12px; border-radius: 99px; font-family: Inter, -apple-system, sans-serif; font-size: 12px; font-weight: 600; line-height: 1.2; letter-spacing: 0.01em; background: rgba(239,68,68,0.1); border: 1.5px solid rgba(239,68,68,0.25); color: #f87171; white-space: nowrap; }"
+    },
+    {
+      "name": "Filter Pill",
+      "kind": "chip",
+      "refersTo": "filter-pill",
+      "description": "Filtro de conteúdo em scroll horizontal. Ativo vira Azul Pista.",
+      "html": "<div style=\"display:flex;gap:8px;\"><button class=\"ds-filter-pill ds-filter-pill--active\">🏆 Destaques</button><button class=\"ds-filter-pill\">Recentes</button><button class=\"ds-filter-pill\">Iniciante</button></div>",
+      "css": ".ds-filter-pill { padding: 7px 14px; border-radius: 99px; font-family: Inter, -apple-system, sans-serif; font-size: 13px; font-weight: 600; border: 1.5px solid rgba(255,255,255,0.1); background: transparent; color: rgba(255,255,255,0.45); cursor: pointer; white-space: nowrap; transition: all 0.15s; } .ds-filter-pill:hover { color: rgba(255,255,255,0.75); border-color: rgba(255,255,255,0.2); } .ds-filter-pill--active { background: #2563eb; border-color: #2563eb; color: #ffffff; } .ds-filter-pill:focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; }"
+    },
+    {
+      "name": "Card de Treino",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Card padrão do feed de comunidade. Borda sutil, sem sombra.",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card__header\"><div class=\"ds-avatar\">AF</div><div class=\"ds-card__meta\"><p class=\"ds-card__title\">Leg Day do Inferno</p><p class=\"ds-card__sub\">Ana Ferreira · 7 exercícios · 60min</p></div><span class=\"ds-chip-hold\">Intermediário</span></div><div class=\"ds-card__tags\"><span class=\"ds-tag\">Pernas</span><span class=\"ds-tag\">Glúteos</span></div><hr class=\"ds-divider\"/><div class=\"ds-card__actions\"><button class=\"ds-like\">🤍 289</button><button class=\"ds-like\">💬 31</button></div></div>",
+      "css": ".ds-card { background: #0c1f3f; border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 16px; font-family: Inter, -apple-system, sans-serif; color: #ffffff; } .ds-card__header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; } .ds-avatar { width: 38px; height: 38px; min-width: 38px; border-radius: 50%; background: linear-gradient(135deg, #1e40af, #3b82f6); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 12px; color: #fff; } .ds-card__meta { flex: 1; min-width: 0; } .ds-card__title { font-weight: 700; font-size: 14px; line-height: 1.3; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } .ds-card__sub { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 2px; } .ds-chip-hold { display: inline-flex; align-items: center; padding: 5px 12px; border-radius: 99px; font-size: 12px; font-weight: 600; background: rgba(251,191,36,0.1); border: 1.5px solid rgba(251,191,36,0.25); color: #fbbf24; white-space: nowrap; } .ds-card__tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; } .ds-tag { display: inline-flex; align-items: center; padding: 5px 12px; border-radius: 99px; font-size: 12px; font-weight: 600; background: rgba(59,130,246,0.12); border: 1.5px solid rgba(59,130,246,0.3); color: #93c5fd; } .ds-divider { border: none; border-top: 1px solid rgba(255,255,255,0.07); margin-bottom: 12px; } .ds-card__actions { display: flex; gap: 16px; } .ds-like { background: none; border: none; cursor: pointer; font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.4); padding: 4px 0; font-family: inherit; transition: color 0.15s; } .ds-like:hover { color: rgba(255,255,255,0.75); }"
+    },
+    {
+      "name": "Campo de Texto",
+      "kind": "input",
+      "refersTo": "input-default",
+      "description": "Input padrão para formulários. Foco em borda azul, sem glow externo.",
+      "html": "<input class=\"ds-input\" placeholder=\"Nome do treino *\" type=\"text\" />",
+      "css": ".ds-input { width: 100%; background: #0c1f3f; border: 1.5px solid rgba(255,255,255,0.1); border-radius: 12px; color: #ffffff; font-family: Inter, -apple-system, sans-serif; font-size: 15px; font-weight: 700; line-height: 1.3; padding: 13px 16px; outline: none; transition: border-color 0.15s; -webkit-appearance: none; box-sizing: border-box; } .ds-input::placeholder { color: rgba(255,255,255,0.28); font-weight: 400; } .ds-input:focus { border-color: #3b82f6; } .ds-input:disabled { opacity: 0.4; cursor: not-allowed; }"
+    },
+    {
+      "name": "Bottom Sheet",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Modal nativo de mobile. Alternativa a diálogos centrados. Raio 24px superior.",
+      "html": "<div class=\"ds-sheet-overlay\"><div class=\"ds-sheet\"><div class=\"ds-sheet-handle\"></div><div class=\"ds-sheet-body\"><h3 class=\"ds-sheet-title\">Registrar treino</h3><input class=\"ds-input\" placeholder=\"Nome do treino *\" /></div></div></div>",
+      "css": ".ds-sheet-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); display: flex; align-items: flex-end; justify-content: center; z-index: 50; } .ds-sheet { background: #0c1f3f; border-radius: 24px 24px 0 0; border-top: 1px solid rgba(255,255,255,0.1); width: 100%; max-width: 480px; max-height: 90dvh; overflow-y: auto; animation: ds-slide-up 0.22s ease; } @keyframes ds-slide-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } } .ds-sheet-handle { width: 36px; height: 4px; background: rgba(255,255,255,0.2); border-radius: 99px; margin: 12px auto 20px; } .ds-sheet-body { padding: 0 20px 24px; } .ds-sheet-title { font-family: Inter, -apple-system, sans-serif; font-size: 18px; font-weight: 800; color: #ffffff; margin-bottom: 20px; line-height: 1.2; letter-spacing: -0.01em; } .ds-input { width: 100%; background: #0c1f3f; border: 1.5px solid rgba(255,255,255,0.1); border-radius: 12px; color: #fff; font-family: Inter, -apple-system, sans-serif; font-size: 15px; font-weight: 700; padding: 13px 16px; outline: none; transition: border-color 0.15s; box-sizing: border-box; } .ds-input::placeholder { color: rgba(255,255,255,0.28); font-weight: 400; } .ds-input:focus { border-color: #3b82f6; }"
+    },
+    {
+      "name": "Navegação Inferior",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Navegação principal em mobile. Três destinos, ícone + label.",
+      "html": "<nav class=\"ds-bottom-nav\"><button class=\"ds-nav-btn ds-nav-btn--active\"><span class=\"ds-nav-icon\">🏋️</span><span class=\"ds-nav-label\">Criar</span></button><button class=\"ds-nav-btn\"><span class=\"ds-nav-icon\">🌎</span><span class=\"ds-nav-label\">Comunidade</span></button><button class=\"ds-nav-btn\"><span class=\"ds-nav-icon\">🏆</span><span class=\"ds-nav-label\">Competição</span></button></nav>",
+      "css": ".ds-bottom-nav { display: flex; background: rgba(7,20,40,0.97); border-top: 1px solid rgba(255,255,255,0.08); width: 100%; } .ds-nav-btn { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 10px 4px; border: none; background: transparent; cursor: pointer; color: rgba(255,255,255,0.35); min-height: 56px; transition: color 0.15s; font-family: Inter, -apple-system, sans-serif; } .ds-nav-btn--active { color: #3b82f6; } .ds-nav-icon { font-size: 22px; line-height: 1; } .ds-nav-label { font-size: 10px; font-weight: 600; letter-spacing: 0.02em; } .ds-nav-btn:focus-visible { outline: 2px solid #3b82f6; outline-offset: -4px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Seu Treino na Palma da Mão",
+    "overview": "Spotter existe no bolso do atleta, aberto com uma mão entre séries. O design parte desse cenário físico: academia com luz forte, foco na tarefa, sem tempo para aprender onde está o botão. Cada tela precisa comunicar sua função em dois segundos ou menos. O sistema prioriza clareza absoluta sobre decoração, hierarquia real sobre uniformidade, e identidade que não depende de efeitos visuais para existir.\n\nA paleta é escura e profunda, como a água no fundo de uma piscina olímpica. Não dark por tendência, mas dark porque o atleta está sob luz artificial intensa. O azul de ação aparece só onde há algo a fazer, tornando cada botão inequívoco.\n\nO que este sistema rejeita: o template SaaS cinza de cards idênticos sem personalidade; interfaces fitness com gradientes roxo-neon; tabelas pesadas cheias de números que confundem em vez de motivar.",
+    "keyCharacteristics": [
+      "Fundo profundo azul-marinho; superfícies em camadas tonais, não em sombras",
+      "Um único azul de ação vivo; tudo mais é neutro ou semântico",
+      "Um único tipo sem serifa (Inter) em peso variável: 900 para o que comanda, 400 para o que informa",
+      "Bordas full-rounded em chips e badges; cantos generosos em cards (16px) e botões (14px)",
+      "Animações de estado apenas, nunca coreografia de entrada de página"
+    ],
+    "rules": [
+      { "name": "A Regra do Azul Único",       "body": "O Azul Pista de Atletismo (#2563eb) aparece em no máximo 15% de qualquer tela. Se parece muito azul, está errado.", "section": "colors" },
+      { "name": "A Regra da Cor Semântica",     "body": "Cada cor de estado pertence a exatamente uma função. Verde = iniciante + sucesso. Laranja = streak apenas.", "section": "colors" },
+      { "name": "A Regra do Peso Único por Nível", "body": "Não use peso 700 e 800 no mesmo bloco visual sem diferença de tamanho. Peso pesado sem contraste de escala vira ruído.", "section": "typography" },
+      { "name": "A Regra do Caption Mobile",    "body": "O caption de 10px é exclusivo para navegação inferior e metadata. Nunca para instrução ou label de input.", "section": "typography" },
+      { "name": "A Regra da Camada Tonal",      "body": "Antes de adicionar sombra, pergunte: estou criando nova camada de fundo? Se sim, use surface-raised. Sombra é o último recurso.", "section": "elevation" }
+    ],
+    "dos": [
+      "Usar #2563eb somente para ações primárias, nav ativo e progresso",
+      "Verificar contraste: texto body (#fff sobre #0c1f3f) deve atingir ≥4.5:1",
+      "Touch targets mínimos de 44×44px em todos os elementos interativos",
+      "Comunicar dificuldade com texto + cor no chip, nunca só cor",
+      "Implementar prefers-reduced-motion para fadeUp, slideUp e likeAnim",
+      "Usar Inter 900 com letter-spacing -0.02em para números de ranking grandes"
+    ],
+    "donts": [
+      "Não usar cards idênticos cinzas em grade sem hierarquia interna",
+      "Não usar gradientes roxo-neon, glow colorido ou glassmorphism decorativo",
+      "Não replicar tabelas densas tipo MyFitnessPal; hierarquia clara acima de completude de dados",
+      "Não colocar border-left colorido como acento em cards ou list items",
+      "Não usar background-clip: text com gradiente para texto colorido",
+      "Não animar propriedades de layout (width, height, padding) além da barra de progresso já existente",
+      "Não usar o Laranja Sequência (#fb923c) para nada além de streak",
+      "Não colocar texto de corpo abaixo de 13px"
+    ]
+  }
+}
