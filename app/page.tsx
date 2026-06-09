@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import { useExercises, MUSCLE_GROUPS, EQUIPMENT_OPTIONS } from "@/lib/useExercises";
 import { SpotterLogo } from "./SpotterLogo";
-import MarketingLanding from "./MarketingLanding";
+import SpotterLanding from "./SpotterLanding";
 
 // ─── TYPES ────────────────────────────────────────────────────────────────────
 
@@ -1369,7 +1369,7 @@ export default function App() {
 
   // ── Landing de marketing (primeira tela) ──
   if (!started) {
-    return <MarketingLanding onEnter={() => setStarted(true)} />;
+    return <SpotterLanding onEnter={() => setStarted(true)} />;
   }
 
   // ── Tela de login (escolha do nome) ──
