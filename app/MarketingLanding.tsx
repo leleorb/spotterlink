@@ -31,14 +31,14 @@ export default function MarketingLanding({ onEnter }: { onEnter: () => void }) {
 
       {/* Hero */}
       <section id="top" className="relative" style={{ background: "var(--gradient-hero)" }}>
-        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "32px 32px" }} />
+        <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #000 1px, transparent 0)", backgroundSize: "32px 32px" }} />
         <div className="relative max-w-7xl mx-auto px-6 pt-24 pb-32 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-card/40 text-xs text-muted-foreground mb-8">
             <Sparkles className="h-3.5 w-3.5" /> Em breve · Lista de espera aberta
           </div>
           <h1 className="font-display font-bold text-5xl md:text-7xl lg:text-8xl leading-[0.95] max-w-5xl mx-auto">
             Seu foco.<br />
-            <span className="bg-gradient-to-r from-white to-white/50 bg-clip-text text-transparent">Seu progresso.</span>
+            <span className="text-muted-foreground">Seu progresso.</span>
           </h1>
           <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             O Spotter monta seus treinos, mostra os <strong className="text-foreground">trends do momento</strong> e transforma sua jornada na academia numa competição com os amigos.
