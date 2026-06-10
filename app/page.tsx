@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import { motion } from "framer-motion";
 import {
-  Dumbbell, Users, Trophy, Bell, Search, X, Plus, Check,
+  Dumbbell, Users, Trophy, Sun, Moon, Search, X, Plus, Check,
   Play, Loader2, SearchX, Wrench, Heart, MessageCircle, ChevronRight,
   Flame, Target, Zap, ArrowLeft, LogOut, Award, Edit3, BarChart2, CalendarDays,
 } from "lucide-react";
@@ -971,7 +972,7 @@ function Competition({ userName, userInitials }: { userName: string; userInitial
               </div>
               <Av initials={f.isMe ? userInitials : f.avatar} size={36} />
               <div style={{ flex: 1, minWidth: 0 }}>
-                <p style={{ fontWeight: "var(--weight-bold)" as unknown as number, fontSize: "var(--text-lg)", color: f.isMe ? "#0071e3" : "#fff", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", display: "flex", alignItems: "center", gap: 6 }}>
+                <p style={{ fontWeight: "var(--weight-bold)" as unknown as number, fontSize: "var(--text-lg)", color: f.isMe ? "#0071e3" : "var(--ink)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", display: "flex", alignItems: "center", gap: 6 }}>
                   {f.isMe ? userName : f.name}
                   {!f.isMe && CREATORS.has(f.name) && <VerifiedBadge size={14} />}
                 </p>
@@ -1366,10 +1367,17 @@ export default function App() {
   const [userName, setUserName] = useState<string | null>(null);
   const [tab, setTab] = useState<Tab>("criar");
   const [showProfile, setShowProfile] = useState(false);
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+
+  const toggleTheme = () => setTheme(t => t === "light" ? "dark" : "light");
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
 
   // ── Landing de marketing (primeira tela) ──
   if (!started) {
-    return <SpotterLanding onEnter={() => setStarted(true)} />;
+    return <SpotterLanding onEnter={() => setStarted(true)} theme={theme} onToggleTheme={toggleTheme} />;
   }
 
   // ── Tela de login (escolha do nome) ──
@@ -1399,7 +1407,9 @@ export default function App() {
           </div>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <button className="btn-icon" aria-label="Notificações"><Bell size={18} /></button>
+          <button className="btn-icon" aria-label={theme === "dark" ? "Modo claro" : "Modo escuro"} onClick={toggleTheme}>
+            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
           <button
             onClick={() => setShowProfile(true)}
             style={{ background: "none", border: "none", cursor: "pointer", padding: 0, borderRadius: "50%" }}
@@ -1417,14 +1427,59 @@ export default function App() {
         {tab === "competicao" && <Competition userName={userName} userInitials={initials} />}
       </main>
 
-      {/* Bottom nav */}
+      {/* Bottom nav — tubelight */}
       <nav className="bottom-nav">
-        {NAV_ITEMS.map(t => (
-          <button key={t.id} className={`nav-btn ${tab === t.id ? "active" : ""}`} onClick={() => setTab(t.id)}>
-            <span className="nav-icon">{t.icon}</span>
-            <span className="nav-label">{t.label}</span>
-          </button>
-        ))}
+        {NAV_ITEMS.map(t => {
+          const isActive = tab === t.id;
+          return (
+            <button
+              key={t.id}
+              onClick={() => setTab(t.id)}
+              className={`nav-btn ${isActive ? "active" : ""}`}
+            >
+              {isActive && (
+                <motion.span
+                  layoutId="app-nav-lamp"
+                  initial={false}
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    borderRadius: "inherit",
+                    zIndex: -1,
+                  }}
+                >
+                  {/* barra + brilho no topo */}
+                  <span style={{
+                    position: "absolute",
+                    top: 0,
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    width: 28,
+                    height: 3,
+                    borderRadius: "0 0 4px 4px",
+                    background: "var(--accent)",
+                    display: "block",
+                  }} />
+                  <span style={{
+                    position: "absolute",
+                    top: -2,
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    width: 44,
+                    height: 18,
+                    borderRadius: "50%",
+                    background: "var(--accent-soft)",
+                    filter: "blur(8px)",
+                    display: "block",
+                  }} />
+                </motion.span>
+              )}
+              <span className="nav-icon">{t.icon}</span>
+              <span className="nav-label">{t.label}</span>
+            </button>
+          );
+        })}
       </nav>
 
       {/* Profile page overlay */}

@@ -35,9 +35,12 @@ import {
   Share2,
   CreditCard,
   HelpCircle,
+  Sun,
+  Moon,
 } from "lucide-react";
 import { SpotterLogo } from "./SpotterLogo";
 import { NavBar } from "@/components/ui/tubelight-navbar";
+import { AuroraBackground } from "@/components/ui/aurora-background";
 
 function cn(...classes: (string | undefined | null | boolean)[]): string {
   return classes.filter(Boolean).join(" ");
@@ -283,7 +286,15 @@ function StatCounter({ icon, value, label, suffix, delay }: StatCounterProps) {
 }
 
 // ── Landing principal ───────────────────────────────────────────────────────
-export default function SpotterLanding({ onEnter }: { onEnter?: () => void }) {
+export default function SpotterLanding({
+  onEnter,
+  theme = "light",
+  onToggleTheme,
+}: {
+  onEnter?: () => void;
+  theme?: "light" | "dark";
+  onToggleTheme?: () => void;
+}) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const heroRef = useRef<HTMLDivElement>(null);
 
@@ -407,10 +418,20 @@ export default function SpotterLanding({ onEnter }: { onEnter?: () => void }) {
             <span className="text-xl font-bold text-slate-900">Spotter</span>
           </div>
 
-          {/* CTA (desktop) */}
-          <Button variant="default" className="hidden md:inline-flex" onClick={enter}>
-            Começar Agora
-          </Button>
+          <div className="flex items-center gap-2">
+            {/* Botão de tema sol/lua */}
+            <button
+              onClick={onToggleTheme}
+              aria-label={theme === "dark" ? "Modo claro" : "Modo escuro"}
+              className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-slate-200 bg-white/80 hover:bg-slate-100 text-slate-700 transition-colors"
+            >
+              {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+            </button>
+            {/* CTA (desktop) */}
+            <Button variant="default" className="hidden md:inline-flex" onClick={enter}>
+              Começar Agora
+            </Button>
+          </div>
         </nav>
       </motion.header>
 
@@ -420,12 +441,8 @@ export default function SpotterLanding({ onEnter }: { onEnter?: () => void }) {
       <NavBar items={navItems} />
 
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-        <div className="absolute inset-0">
-          <FloatingPaths position={1} />
-          <FloatingPaths position={-1} />
-        </div>
-
+      <section ref={heroRef} className="overflow-hidden pt-16">
+        <AuroraBackground className="min-h-screen" showRadialGradient>
         <div className="relative z-10 container mx-auto px-4 md:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -466,6 +483,7 @@ export default function SpotterLanding({ onEnter }: { onEnter?: () => void }) {
             </div>
           </motion.div>
         </div>
+        </AuroraBackground>
       </section>
 
       {/* Features Section */}
@@ -570,7 +588,7 @@ export default function SpotterLanding({ onEnter }: { onEnter?: () => void }) {
                         {testimonial.avatar}
                       </div>
                       <div>
-                        <CardTitle className="text-lg" style={{ color: '#02002e' }}>{testimonial.name}</CardTitle>
+                        <CardTitle className="text-lg" style={{ color: "var(--ink)" }}>{testimonial.name}</CardTitle>
                         <CardDescription>{testimonial.role}</CardDescription>
                       </div>
                     </div>
