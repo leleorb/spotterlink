@@ -27,8 +27,8 @@ export async function GET(req: NextRequest) {
       // Search by exercise name — use limit param
       url = `https://exercisedb.p.rapidapi.com/exercises/name/${search.toLowerCase()}?limit=50`;
     } else if (targetMuscle) {
-      // Filter by target muscle
-      url = `https://exercisedb.p.rapidapi.com/exercises/target/${targetMuscle.toLowerCase()}?limit=50`;
+      // Filter by bodyPart (chest, back, shoulders, upper arms, etc.)
+      url = `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${targetMuscle.toLowerCase()}?limit=50`;
     } else if (equipment) {
       // Filter by equipment
       url = `https://exercisedb.p.rapidapi.com/exercises/equipment/${equipment.toLowerCase()}?limit=50`;

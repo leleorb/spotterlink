@@ -43,9 +43,12 @@ export function useExercises(query?: string, muscle?: string, equipment?: string
       }
     };
 
-    // Only fetch if we have at least one search parameter
+    // Only fetch when there's an active filter or search
     if (query || muscle || equipment) {
       fetchExercises();
+    } else {
+      setExercises([]);
+      setLoading(false);
     }
   }, [query, muscle, equipment]);
 
