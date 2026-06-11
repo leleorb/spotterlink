@@ -1137,7 +1137,7 @@ function Landing({ onLogin }: { onLogin: (name: string) => void }) {
             background: "radial-gradient(circle, rgba(0,113,227,0.22) 0%, transparent 70%)",
             pointerEvents: "none",
           }} />
-          <SpotterLogo size={80} />
+          <SpotterLogo size={80} tone="auto" />
         </div>
 
         <h1 style={{
@@ -1398,7 +1398,7 @@ export default function App() {
       {/* Top bar */}
       <header className="topbar">
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <SpotterLogo size={30} />
+          <SpotterLogo size={30} tone="auto" />
           <div>
             <p style={{ fontWeight: "var(--weight-extrabold)" as unknown as number, fontSize: "var(--text-lg)", color: "var(--ink)", lineHeight: 1 }}>Spotter</p>
             <p style={{ fontSize: "var(--text-xs)", color: "var(--ink-3)", lineHeight: 1, marginTop: 2 }}>

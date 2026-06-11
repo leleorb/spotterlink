@@ -15,6 +15,14 @@
 }
 
 :root {
+  /* Filtro para escurecer o logo branco no tema claro */
+  --spotter-logo-filter: brightness(0) saturate(100%) invert(9%) sepia(6%) saturate(700%) hue-rotate(190deg);
+}
+[data-theme="dark"] {
+  --spotter-logo-filter: none;
+}
+
+:root {
   /* Variáveis que o aurora-background usa via var(--name) nas classes inline */
   --white:       #ffffff;
   --black:       #000000;

@@ -414,7 +414,7 @@ export default function SpotterLanding({
       >
         <nav className="container mx-auto px-4 md:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <SpotterLogo size={32} />
+            <SpotterLogo size={32} tone="auto" />
             <span className="text-xl font-bold text-slate-900">Spotter</span>
           </div>
 
